@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jackbullen/Devpost-Manager/static/css/main.3546eb51.css",
-    "main.js": "/jackbullen/Devpost-Manager/static/js/main.768ec81d.js",
-    "static/js/787.61aa8119.chunk.js": "/jackbullen/Devpost-Manager/static/js/787.61aa8119.chunk.js",
-    "index.html": "/jackbullen/Devpost-Manager/index.html",
-    "main.3546eb51.css.map": "/jackbullen/Devpost-Manager/static/css/main.3546eb51.css.map",
-    "main.768ec81d.js.map": "/jackbullen/Devpost-Manager/static/js/main.768ec81d.js.map",
-    "787.61aa8119.chunk.js.map": "/jackbullen/Devpost-Manager/static/js/787.61aa8119.chunk.js.map"
+    "main.css": "/Devpost-Manager/static/css/main.3546eb51.css",
+    "main.js": "/Devpost-Manager/static/js/main.61b82ae9.js",
+    "static/js/787.61aa8119.chunk.js": "/Devpost-Manager/static/js/787.61aa8119.chunk.js",
+    "index.html": "/Devpost-Manager/index.html",
+    "main.3546eb51.css.map": "/Devpost-Manager/static/css/main.3546eb51.css.map",
+    "main.61b82ae9.js.map": "/Devpost-Manager/static/js/main.61b82ae9.js.map",
+    "787.61aa8119.chunk.js.map": "/Devpost-Manager/static/js/787.61aa8119.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3546eb51.css",
-    "static/js/main.768ec81d.js"
+    "static/js/main.61b82ae9.js"
   ]
 }
