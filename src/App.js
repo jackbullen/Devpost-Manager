@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'; 
+import HackathonList from './components/HackathonList';
+import myHackathons from './data/hackathons.json';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="p-4 bg-gray-100">
+
+      <header className='mb-10 text-3xl font-bold mb-4 text-center'>
+        <h1>My Devpost Event Manager</h1>
       </header>
+
+      <div className="max-w-lg mx-auto">
+        <HackathonList hackathons={myHackathons.slice(1,)} />
+      </div>
+
     </div>
   );
 }
