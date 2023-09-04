@@ -1,4 +1,5 @@
 import React from 'react';
+import { calculateRemainingTime } from '../utils/calculateRemainingTime';
 
 function Hackathon({ data }) {
 
@@ -12,43 +13,44 @@ function Hackathon({ data }) {
 
   let monthsTo = 0;  
   if (months) {
-    monthsTo = months[0].slice(0, -5);
+    monthsTo = parseInt(months[0].slice(0, -5));
+    console.log('months',monthsTo);
   }
 
   let daysTo = 0;
   if (days) {
-    daysTo = days[0].slice(0, -4);
+    daysTo = parseInt(days[0].slice(0, -4));
+    console.log('days', daysTo);
   }
 
   let hoursTo = 0;
   if (hours) {
-    hoursTo = hours[0].slice(0, -5);
+    hoursTo = parseInt(hours[0].slice(0, -5));
+    console.log('hours', hoursTo);
   }
-  
-  let remainingTime = '';
-  if (monthsTo) {
-    remainingTime = 'about ' + monthsTo + 'month(s)';
+  let textColor = '';
+  if (hoursTo) {
+    textColor = 'text-red-500';
   } else if (daysTo) {
-    remainingTime = daysTo + ' days';
-  } else if (hoursTo) {
-    remainingTime = hoursTo + ' hours';
+    textColor = 'text-yellow-500';
   } else {
-    remainingTime = 'Ended';
+    textColor = 'text-green-500';
   }
-    
 
+  const remainingTime = hoursTo || daysTo || monthsTo ? calculateRemainingTime(monthsTo, daysTo, hoursTo) : 'Event has ended'
+  textColor = remainingTime === 'Event has ended' ? 'text-gray-500' : textColor;
   return (
     <div className="m-8">
 
       <h2 className="text-2xl font-semibold">{data[0]}</h2>
 
-      <p className={hoursTo ? 'text-red-500' : ''}>Time Remaining: { remainingTime }</p>
+      <p className={textColor}>Time Remaining: { remainingTime }</p>
 
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-2 py-1 px-2 rounded">
+      <button className="bg-blue-500 hover:bg-opacity-95 text-white font-bold mt-2 py-1 px-2 rounded">
         <a href={link} target="_blank" rel="noopener noreferrer">Go to Devpost</a>
       </button>
 
-    </div>
+  </div>
   );
 }
 
