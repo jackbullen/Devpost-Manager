@@ -12,8 +12,12 @@ function calculateRemainingTime(monthsTo, daysTo, hoursTo) {
     hackathonDate.setDate(dataDate.getDate() + daysTo);
     hackathonDate.setHours(dataDate.getHours() + hoursTo);
 
-    const timeDifference = Math.abs(hackathonDate - currentDate);
+    const timeDifference = hackathonDate - currentDate;
 
+    if (timeDifference < 0) {
+      return 'Event has ended';
+    }
+    
     const daysRemaining = Math.round(timeDifference / (1000 * 60 * 60 * 24));
     const hoursRemaining = Math.round(timeDifference / (1000 * 60 * 60));
     
